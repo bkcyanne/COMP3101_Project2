@@ -1,2 +1,2 @@
-# COMP3101_Project2
-K
+# COMP3101-FinalProject
+Create visualization of Processor scheduling algorithms
