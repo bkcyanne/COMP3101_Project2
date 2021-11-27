@@ -1,7 +1,7 @@
 "use strict";
 
 var $currTableRow = $("#FCFS #start");
-var curValue = parseInt($currTableRow[0].textContent.trim().split("")[1]);
+var currentValue = parseInt($currTableRow[0].textContent.trim().split("")[1]);
 var $second_currTableRow = $("#SJN #second_start");
 var second_currValue = parseInt($second_currTableRow[0].textContent.trim().split("")[1]);
 var $third_currTableRow = $("#PS #third_start");
@@ -31,14 +31,14 @@ $("#RR-list").click(() => {
 
 $(".add-row").click(function () {
   if ($("#FCFS").is(".active")) {
-    let val = curValue + 1;
+    let val = currentValue + 1;
     let row = `<tr class="P${val}"> 
                   <td>P${val}</td>
                   <td><input type="number" class="form-control p-0" name="arrivalTime" id="arrTime${val}" min="0" value="${val}"></td> 
                   <td><input id="service${val}" class="form-control p-0" type="number" value="${val}" min="0"></td>
               </tr>`;
     $("#FCFS-table").append(row);
-    curValue = val;
+    currentValue = val;
     return
   }
 
@@ -89,7 +89,7 @@ $(".remove-row").click(function () {
 
     if (FCFSTableRows.length > 2) {
       FCFSTableRows.last().remove();
-      curValue -= 1
+      currentValue -= 1
       return
     }
   }
